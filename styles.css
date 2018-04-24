@@ -12,7 +12,14 @@
       text-align: center;
       cursor: pointer;
     }
-
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        color: inherit;
+    }
     #textHome{
       margin-top: 100px;
     }

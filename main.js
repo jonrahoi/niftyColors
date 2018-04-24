@@ -42,6 +42,8 @@ let c = tinycolor.random() //.toRgb()
 function testColor (isClick) {
   const clr = tinycolor.random()
   var color = `#${clr.toHex()}`
+  const clrRBG = clr.toRgb()
+
   if (!isClick) {
     color = cleanParams() || color
   }
@@ -54,14 +56,14 @@ function testColor (isClick) {
   var answers = []
   for (var x = 0; x < COLORS.algos.length; x++) {
     var guy = COLORS.algos[x]
-    var name = guy.f(color)
+    var name = guy.f(color, clrRBG.r, clrRBG.g, clrRBG.b)
     answers.push({
       name: guy.name,
       color: name
     })
   }
 
-  const clrRBG = clr.toRgb()
+  
   const fontColor = colorIsLight(clrRBG.r,clrRBG.g,clrRBG.b) ? '#000' : '#FFF';
   $('#textHome').html(COLORS.template({algos: answers}))
   $('body').css('color', fontColor)

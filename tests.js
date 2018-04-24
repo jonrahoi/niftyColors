@@ -11,35 +11,11 @@
 //   gray: '#808080',
 // brown: '#A52A2A' }
 
-function hexToRgb (hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null
-}
-function padNum (num) {
-  var padded = ('00' + num.toString(16)).slice(-2)
-  console.log(padded)
-  return padded
-}
-
-function getFontColor (hex) {
-  var rgb = hexToRgb(hex)
-  var color = 'black'
-  var brightness = ((rgb.r * 299) + (rgb.g * 587) + (rgb.b * 114)) / 1000
-  // console.log(brightness)
-  if (brightness < 128) color = 'white'
-
-  return color
-}
-function getRandomColor () {
-  var r = Math.floor(Math.random() * 256)
-  var g = Math.floor(Math.random() * 256)
-  var b = Math.floor(Math.random() * 256)
-  var randomcolor = '#' + padNum(r) + padNum(g) + padNum(b)
-  return randomcolor
+var colorIsLight = function (r, g, b) {
+  // Counting the perceptive luminance
+  // human eye favors green... 
+  var a = 1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return (a < 0.5);
 }
 
 function recordPlayerAnswer (playerName, color, playerNameForColor, consensusName, answers) {
@@ -62,18 +38,13 @@ function recordPlayerAnswer (playerName, color, playerNameForColor, consensusNam
     guy.wrong += 1
   }
   guy.successRate = Math.round((guy.right / guy.total) * 100)
-// guy.answers.push({
-//   color: color,
-//   playerNameForColor: playerNameForColor,
-//   consensusName: consensusName,
-//   right: isRight
-// })
 }
 
 function testOneColor (color, consensusName, answers) {
   for (var x = 0; x < COLORS.algos.length; x++) {
     var guy = COLORS.algos[x]
-    var name = guy.f(color)
+    var rgb = tinycolor(color).toRgb()
+    var name = guy.f(color, rgb.r, rgb.g, rgb.b)
     recordPlayerAnswer(guy.name, color, name, consensusName, answers)
   }
 }
@@ -128,12 +99,15 @@ function testColors () {
     setTimeout(function (x, state) {
       var color = allColors[x]
       var name = XKCD[color]
+      // const clr = tinycolor.random()
+      // var color = `#${clr.toHex()}`
+      // const clrRBG = clr.toRgb()
       var consensusName = findRealName(name)
       testOneColor(color, consensusName, answers)
       state.current = x + 1
       textHome.html(COLORS.template(state))
       body.css('background-color', color)
-      body.css('color', getFontColor(color))
+      body.css('color', colorIsLight(color) ? '#000' : '#FFF')
     }.bind(null, x, state), 10)
   }
 }
