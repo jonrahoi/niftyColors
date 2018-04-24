@@ -2,9 +2,9 @@
 
 Thanks for coming to Nifty Topic Hour #1 everyone - here are some relevant links, for the curious.
 
-*[a link to the slides](http://rahoi.com/nifty/hueredity.pdf)
+* [a link to the slides](http://rahoi.com/nifty/hueredity.pdf)
 
-*[nifty topic hour signup sheet](https://docs.google.com/spreadsheets/d/17BP85n9nmZXPMI_9ve_qNro3hjSRjoDQl6FGPox1UJw/)
+* [nifty topic hour signup sheet](https://docs.google.com/spreadsheets/d/17BP85n9nmZXPMI_9ve_qNro3hjSRjoDQl6FGPox1UJw/)
 
 lists of colors : 
 * [xkcd color survey](https://blog.xkcd.com/2010/05/03/color-survey-results/)
