@@ -28,3 +28,18 @@ references and fun things:
 * [adobe color picker](https://color.adobe.com/)
 
 if you have a different idea that won't work in the browser at all, let's chat.
+
+## to use this repo
+
+1. Duplicate `jon.js` and place your algo inside.
+2. If you have node installed, you can run the following commands in the cloned directory: `npm install` and `npm start`.
+3. the pages will be served on `http://localhost:1337`
+4. alternatively you can serve the files however you want; node is not required.
+
+there are two pages - the main one, which tests one random color per click, and:
+
+`http://localhost:1337/tests.html`
+
+which tests your algo against *HALF* of the fully-saturated RGB colors. (I'm saving the other half for the true test)
+
+the colors used for testing here are in `testdata.js`. Feel free to use that data to play around.
