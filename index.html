@@ -1,0 +1,53 @@
+<html>
+  <style>
+    html{
+      height: 100%;
+    }
+    body{
+      margin-top: auto;
+      margin-bottom: auto;
+      user-select: none;
+      font-family: monospace;
+      font-size: 70px;
+      font-weight: normal;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #textHome{
+      margin-top: 100px;
+    }
+    table {
+      font-size: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    td {
+      padding-right: 20px;
+    }
+    th{
+      border-bottom: 1px solid black;
+      text-align: left;
+    }
+  </style>
+  <script id="colors-template" type="text/x-handlebars-template">
+    <table>
+      <tr><th>name</th><th>color</th></tr>
+      {{#each algos}}
+      <tr><td>{{name}}</td><td>{{color}}</td></tr>
+      {{/each}}
+    </table>
+  </script>
+
+  <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script>COLORS = {algos: []}</script>
+  <script src="/lib/tinycolor.js"> </script>
+  <script src="jon.js"></script>
+  <script src="main.js"></script>
+<body>
+<div id="randomColor"></div>
+<div id="textHome"></div>
+</body></html>

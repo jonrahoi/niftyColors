@@ -1,0 +1,32 @@
+    html{
+      height: 100%;
+    }
+    body{
+      margin-top: auto;
+      margin-bottom: auto;
+      user-select: none;
+      font-family: monospace;
+      font-size: 70px;
+      font-weight: normal;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #textHome{
+      margin-top: 100px;
+    }
+    table {
+      font-size: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    td {
+      padding-right: 20px;
+    }
+    
+    th{
+      border-bottom: 1px solid black;
+      text-align: left;
+    }
