@@ -9,16 +9,16 @@ Write a function in Javascript (*or provide a docker image*) that takes in an RG
 - javascript entries are preferred.  See note about `scala.js` below if your tastes lie elsewhere.
 
 ## Parent Colors ##
-    ```var parents = { red: '#FF0000',
-    orange: '#FF7F00',
-    yellow: '#FFFF00',
-    green: '#00FF00',
-    blue: '#0000FF',
-    violet: '#7F00FF',
-    white: '#FFFFFF',
-    black: '#000000',
-    gray: '#808080',
-    brown: '#A52A2A' }```
+```var parents = { red: '#FF0000',
+orange: '#FF7F00',
+yellow: '#FFFF00',
+green: '#00FF00',
+blue: '#0000FF',
+violet: '#7F00FF',
+white: '#FFFFFF',
+black: '#000000',
+gray: '#808080',
+brown: '#A52A2A' }```
 
 (The set will make more sense at the talk, but this is the global set into which all colors must be bucketed.)
 
