@@ -3,7 +3,7 @@
       <link rel="stylesheet" type="text/css" href="styles.css">
       <script id="colors-template" type="text/x-handlebars-template">
         <table>
-          <tr><th>name</th><th>color</th></tr>
+          <tr><th>algo-name</th><th>guess</th></tr>
           {{#each algos}}
           <tr><td>{{name}}</td><td>{{color}}</td></tr>
           {{/each}}
@@ -19,7 +19,8 @@
       <script src="main.js"></script>
   </head>
 <body>
-<a class='nav' href="/tests.html">TEST ALL</a>
+<a class='nav' href="/tests.html">test against all colors</a>
 <div id="randomColor"></div>
 <div id="textHome"></div>
+<p class="small">click anywhere to try another color</p>
 </body></html>

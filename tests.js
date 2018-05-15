@@ -99,6 +99,8 @@ function testColors () {
     setTimeout(function (x, state) {
       var color = allColors[x]
       var name = XKCD[color]
+      const clrRBG = tinycolor(color).toRgb()
+      const fontColor = colorIsLight(clrRBG.r,clrRBG.g,clrRBG.b) ? '#000' : '#FFF';
       // const clr = tinycolor.random()
       // var color = `#${clr.toHex()}`
       // const clrRBG = clr.toRgb()
@@ -106,8 +108,9 @@ function testColors () {
       testOneColor(color, consensusName, answers)
       state.current = x + 1
       textHome.html(COLORS.template(state))
+      
       body.css('background-color', color)
-      body.css('color', colorIsLight(color) ? '#000' : '#FFF')
+      body.css('color', fontColor)
     }.bind(null, x, state), 10)
   }
 }
