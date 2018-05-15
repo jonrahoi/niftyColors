@@ -3,7 +3,7 @@
 Write a function in Javascript (*or provide a docker image*) that takes in an RGB color and returns what "parent" color it's a shade of. 
 
 ### for docker images ###
-- The url you expose should be something that takes a hex color and returns a string "red" or "brown" etc. like : 
+- The url you expose should take a hex color and returns a string of parent color name. It should look like : 
 ```http://127.0.0.1:3000/prediction/color/name?hex=db5929&algorithm=distance```
 - performance is a concern, so any super-slow (> 300ms?) entries will be skipped. 
 - javascript entries are preferred.  See note about `scala.js` below if your tastes lie elsewhere.
