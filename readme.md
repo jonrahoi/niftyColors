@@ -25,6 +25,8 @@ brown: '#A52A2A' }
 
 (The set will make more sense at the talk, but this is the global set into which all colors must be bucketed.)
 
+*NOTE* : the training data set has other colors than the ones listed above - I map those colors manually into our palette using [this function](https://github.com/jonrahoi/niftyColors/blob/4108f33b138a41c2d69834aa84843d3e855cac36/tests.js#L52)
+
 ## to use this repo
 
 1. Duplicate `jon.js` (which is random), rename, and place your algo inside.
